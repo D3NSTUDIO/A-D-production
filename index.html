@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>A&D Production - Creating Compelling Visual Stories</title>
+    <style>
+      /* Reset and base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f4f4;
+        font-size: 16px;
+      }
+
+      /* Header styles */
+      header {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Navigation styles */
+      nav {
+        background-color: #34495e;
+        padding: 1rem;
+      }
+
+      nav ul {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav ul li {
+        margin: 0.5rem;
+      }
+
+      nav ul li a {
+        color: #ecf0f1;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+        padding: 0.5rem 1rem;
+        display: inline-block;
+      }
+
+      nav ul li a:hover {
+        color: #3498db;
+      }
+
+      /* Main content styles */
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+
+      section {
+        background-color: #fff;
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        color: #2c3e50;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      /* CTA Button */
+      .cta-button {
+        display: inline-block;
+        background-color: #3498db;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        margin-top: 1rem;
+      }
+
+      .cta-button:hover {
+        background-color: #2980b9;
+      }
+
+      /* Services list */
+      #services ul {
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+      }
+
+      #services li {
+        background-color: #ecf0f1;
+        padding: 1rem;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      /* Portfolio */
+      .portfolio-item {
+        margin-bottom: 2rem;
+      }
+
+      .portfolio-item img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+
+      /* Contact form */
+      form {
+        display: grid;
+        gap: 1rem;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 1rem;
+      }
+
+      button {
+        background-color: #3498db;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 1rem;
+      }
+
+      button:hover {
+        background-color: #2980b9;
+      }
+
+      /* Footer styles */
+      footer {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        text-align: center;
+        padding: 1rem;
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        body {
+          font-size: 14px;
+        }
+
+        header h1 {
+          font-size: 1.75rem;
+        }
+
+        h2 {
+          font-size: 1.25rem;
+        }
+
+        nav ul {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        nav ul li {
+          margin: 0.25rem 0;
+        }
+
+        section {
+          padding: 1rem;
+        }
+
+        .cta-button {
+          display: block;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        body {
+          font-size: 12px;
+        }
+
+        header h1 {
+          font-size: 1.5rem;
+        }
+
+        h2 {
+          font-size: 1.1rem;
+        }
+
+        #services ul {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Additional CSS for JavaScript functionality */
+      .error-message {
+        color: red;
+        font-size: 0.8rem;
+        margin-top: 0.2rem;
+      }
+
+      .nav-toggle {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .nav-toggle {
+          display: block;
+          background-color: #3498db;
+          color: #fff;
+          border: none;
+          padding: 0.5rem 1rem;
+          margin-bottom: 1rem;
+          cursor: pointer;
+        }
+
+        nav ul {
+          display: none;
+        }
+
+        nav ul.show {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>A&D Production</h1>
+      <p>Creating Compelling Visual Stories</p>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="home">
+        <h2>Welcome to A&D Production</h2>
+        <p>We bring your vision to life through expert production services.</p>
+        <a href="#contact" class="cta-button">Get a Quote</a>
+      </section>
+
+      <section id="about">
+        <h2>About Us</h2>
+        <p>
+          A&D Production is a creative powerhouse dedicated to delivering
+          high-quality visual content for our clients.
+        </p>
+      </section>
+
+      <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+          <li>Editing</li>
+          <li>Producing</li>
+          <li>Filiming</li>
+          <li>every thing a movie nedeed</li>
+        </ul>
+      </section>
+
+      <section id="portfolio">
+        <h2>Featured Projects</h2>
+        <div class="portfolio-item">
+          <iframe src="" frameborder="0"></iframe>
+          <h3>Escape the Matrix</h3>
+          <p>Welcoming to a 0 budjet movie</p>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <form
+          id="contactForm"
+          action="https://formsubmit.co/deondipin@outlook.com"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="_subject"
+            value="New submission from A&D Production website"
+          />
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 A&D Production. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
